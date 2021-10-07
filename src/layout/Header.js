@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
@@ -11,7 +10,7 @@ import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainMenu, pluginItems } from './menuItems';
+import Menu from './Menu';
 
 const drawerWidth = 240;
 
@@ -115,9 +114,7 @@ export default function Header() {
           </IconButton>
         </Toolbar>
         <Divider />
-        <List>{mainMenu}</List>
-        <Divider />
-        <List>{pluginItems}</List>
+        <Menu />
       </Drawer>
     </React.Fragment>
   );
