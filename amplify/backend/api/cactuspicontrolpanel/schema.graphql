@@ -1,0 +1,18 @@
+type Task
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["Admins"], queries: null, mutations: [create, update, delete] }
+      { allow: groups, groups: ["Users"], queries: [get, list], mutations: null }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  description: String
+  status: String
+}
+type PrivateMessage @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  plugin: String!
+  content: String!
+}

@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './store/';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import { Auth } from '@aws-amplify/auth';
+import awsconfig from './aws-exports';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -19,6 +21,9 @@ import Settings from './pages/Settings';
 import Bustime from './pages/plugins/Bustime';
 import Alphavantage from './pages/plugins/Alphavantage';
 import Weather from './pages/plugins/Weather';
+import store from './store/';
+
+Auth.configure(awsconfig);
 
 const mdTheme = createTheme();
 
@@ -68,4 +73,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

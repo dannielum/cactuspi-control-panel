@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { AmplifySignOut } from '@aws-amplify/ui-react';
 import { styled } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
@@ -98,6 +99,7 @@ export default function Header() {
               <NotificationsIcon />
             </Badge>
           </IconButton>
+          <AmplifySignOut />
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
